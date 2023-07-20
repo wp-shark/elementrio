@@ -1,0 +1,41 @@
+.ele-element .elementrio-icon {
+  display: inline-block;
+  transition: 0.3s;
+}
+.ele-element .elementrio-icon svg {
+  transition: 0.3s;
+}
+.ele-element .elementrio-icon-box-wrapper {
+  text-align: center;
+}
+.ele-element .elementrio-icon-box-title {
+  transition: 0.3s;
+}
+.ele-element .elementrio-icon-box-description {
+  transition: 0.3s;
+}
+.ele-element .elementrio-icon-box-button {
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 15px 30px;
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #2575fc;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.ele-element .elementrio-icon-box-button:hover {
+  background-color: #0350d2;
+}
+
+/*# sourceMappingURL=elementrio.css.map */
