@@ -34,6 +34,12 @@ function elementrio_enqueue_styles() {
 }
 add_action( 'elementor/frontend/after_enqueue_styles', 'elementrio_enqueue_styles' );
 
+// Enqueue elementrio plugin's custom js
+function elementrio_enqueue_script() {
+	wp_enqueue_script( 'elementrio-js', plugins_url( 'js/elementrio.js', __FILE__ ) );
+}
+add_action( 'elementor/frontend/after_register_scripts', 'elementrio_enqueue_script' );
+
 // Register elementrio plugin widgets
 function register_icon_box_widget( $widgets_manager ) {
 
