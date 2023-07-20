@@ -56,20 +56,6 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'ele_icon_box_header_icons__switch',
-			[
-				'label' => esc_html__('Add icon? ', 'elementrio'),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'default' => 'yes',
-				'label_on' =>esc_html__( 'Yes', 'elementrio' ),
-				'label_off' =>esc_html__( 'No', 'elementrio' ),
-				'condition' => [
-					'ele_icon_box_enable_header_icon!' => 'none',
-				]
-			]
-		);
-
-		$this->add_control(
 			'ele_icon_box_header_icons',
 			[
 				'label' => esc_html__( 'Header Icon', 'elementrio' ),
@@ -81,7 +67,6 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'condition' => [
 					'ele_icon_box_enable_header_icon' => 'icon',
-					'ele_icon_box_header_icons__switch' => 'yes'
 				]
 			]
 		);
@@ -190,6 +175,9 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => esc_html__( 'Icon', 'elementrio' ),
 				'tab' => \Elementor\controls_Manager::TAB_STYLE,
+				'condition' => [
+					'ele_icon_box_enable_header_icon' => 'icon',
+				]
 			]
 		);
 
@@ -363,6 +351,107 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 		// end style for Icon 
 
+		// start style for image
+		$this->start_controls_section(
+			'ele_icon_box_image_style',
+			[
+				'label' => esc_html__( 'Image', 'elementrio' ),
+				'tab' => \Elementor\controls_Manager::TAB_STYLE,
+				'condition' => [
+					'ele_icon_box_enable_header_icon' => 'image',
+				]
+			]
+		);
+
+		$this->add_control(
+			'ele_icon_box_image_width',
+			[
+				'label' => esc_html__( 'Width', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 600,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 400,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-icon-box > img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'ele_icon_box_image_height',
+			[
+				'label' => esc_html__( 'Height', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 600,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 400,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-icon-box > img' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'ele_icon_box_image_border',
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-icon-box > img',
+			]
+		);
+
+		$this->add_responsive_control(
+			'ele_icon_box_image_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'separator' => 'before ',
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-icon-box > img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'ele_icon_box_image_margin',
+			[
+				'label' => esc_html__( 'Margin', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-icon-box > img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// end style for image
 
 		// start style for Content
 		$this->start_controls_section(
