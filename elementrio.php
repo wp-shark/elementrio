@@ -1,16 +1,13 @@
 <?php
 /*
  * Plugin Name:       Elementrio
- * Plugin URI:        https://wpshark.com/plugins/elementrio/
  * Description:       An Elementor addon plugin
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Author:            WP Shark
- * Author URI:        https://wpshark.com/
+ * Author:            Iqbal Hossain
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://example.com/my-plugin/
  * Text Domain:       elementrio
  */
 
@@ -31,13 +28,13 @@ function elementrio_fail_load() {
 	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
 }
 
-// Enqueue our plugin's custom CSS
+// Enqueue elementrio plugin's custom CSS
 function elementrio_enqueue_styles() {
 	wp_enqueue_style( 'elementrio-styles', plugins_url( 'css/elementrio.css', __FILE__ ) );
 }
 add_action( 'elementor/frontend/after_enqueue_styles', 'elementrio_enqueue_styles' );
 
-
+// Register elementrio plugin widgets
 function register_icon_box_widget( $widgets_manager ) {
 
 	require_once( __DIR__ . '/widgets/icon-box-widget.php' );
