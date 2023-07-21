@@ -1,4 +1,5 @@
 <?php
+if (! defined( 'ABSPATH' ) ) exit;
 class Icon_Box_Widget extends \Elementor\Widget_Base {
 
 	public function get_name() {
