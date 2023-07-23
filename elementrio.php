@@ -40,12 +40,16 @@ function elementrio_enqueue_script() {
 }
 add_action( 'elementor/frontend/after_register_scripts', 'elementrio_enqueue_script' );
 
-// Register elementrio plugin widgets
+// Register Blog Post widget
+function register_blog_post_widget( $widgets_manager ) {
+	require_once( __DIR__ . '/widgets/blog-post-widget.php' );
+	$widgets_manager->register( new \Blog_post_Widget() );
+}
+add_action( 'elementor/widgets/register', 'register_blog_post_widget' );
+
+// Register Icon Box widget
 function register_icon_box_widget( $widgets_manager ) {
-
 	require_once( __DIR__ . '/widgets/icon-box-widget.php' );
-
 	$widgets_manager->register( new \Icon_Box_Widget() );
-
 }
 add_action( 'elementor/widgets/register', 'register_icon_box_widget' );

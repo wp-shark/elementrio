@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "scripts": {
+	"build-css": "node-sass css/scss/main.scss css/elementrio.css"
+  }
+}
