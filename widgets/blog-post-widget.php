@@ -25,6 +25,7 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 
 	// Register elementrio controls
 	protected function register_controls() {
+
 		// Blog Post Section Start
 		$this->start_controls_section(
 			'ele_element_blog_post_content',
@@ -34,10 +35,70 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'ele_element_blog_posts_num',
+			[
+				'label'     => esc_html__( 'Posts Count', 'elementrio' ),
+				'type'      => \Elementor\Controls_Manager::NUMBER,
+				'min'       => 1,
+				'max'       => 100,
+				'default'   => 3,
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_posts_column',
+			[
+				'label'     => esc_html__( 'Show Posts Per Row', 'elementrio' ),
+				'type'      => \Elementor\Controls_Manager::SELECT,
+				'options'   => [
+					'col-lg-12 col-md-12'   => esc_html__( '1', 'elementrio' ),
+					'col-lg-6 col-md-6'     => esc_html__( '2', 'elementrio' ),
+					'col-lg-4 col-md-6'     => esc_html__( '3', 'elementrio' ),
+					'col-lg-3 col-md-6'     => esc_html__( '4', 'elementrio' ),
+					'col-lg-2 col-md-6'     => esc_html__( '6', 'elementrio' ),
+				],
+				'default'   => 'col-lg-4 col-md-6',
+			]
+		);
+ 
+		$this->add_control(
 			'ele_element_blog_posts_feature_img',
 			[
 				'label'     => esc_html__( 'Show Featured Image', 'elementrio' ),
-				'type'      => Controls_Manager::SWITCHER,
+				'type'      => \Elementor\Controls_Manager::SWITCHER,
+				'label_on'  => esc_html__( 'Yes', 'elementrio' ),
+				'label_off' => esc_html__( 'No', 'elementrio' ),
+				'default'   => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_posts_title',
+			[
+				'label'     => esc_html__( 'Show Title', 'elementrio' ),
+				'type'      => \Elementor\Controls_Manager::SWITCHER,
+				'label_on'  => esc_html__( 'Yes', 'elementrio' ),
+				'label_off' => esc_html__( 'No', 'elementrio' ),
+				'default'   => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_posts_content',
+			[
+				'label'     => esc_html__( 'Show Title', 'elementrio' ),
+				'type'      => \Elementor\Controls_Manager::SWITCHER,
+				'label_on'  => esc_html__( 'Yes', 'elementrio' ),
+				'label_off' => esc_html__( 'No', 'elementrio' ),
+				'default'   => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_posts_show_more',
+			[
+				'label'     => esc_html__( 'Show More Button', 'elementrio' ),
+				'type'      => \Elementor\Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Yes', 'elementrio' ),
 				'label_off' => esc_html__( 'No', 'elementrio' ),
 				'default'   => 'yes',
@@ -46,6 +107,208 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 		// Blog Post Section end
+
+		// Blog Post Button Section Start
+		$this->start_controls_section(
+			'ele_element_blog_post_button',
+			[
+				'label' => esc_html__( 'Read More Button', 'elementrio' ),
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_post_btn_text',
+			[
+				'label' =>esc_html__( 'Label', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'dynamic' => [
+					 'active' => true,
+				],
+				'default' =>esc_html__( 'Learn more ', 'elementrio' ),
+				'placeholder' =>esc_html__( 'Learn more ', 'elementrio' ),
+			]
+		);
+
+		$this->end_controls_section();
+		// Blog Post Button Section End
+
+		// Blog Post Wrapper Style Section Start
+		$this->start_controls_section(
+			'ele_element_blog_post_wrapper',
+			[
+				'label' => esc_html__( 'Warapper', 'elementrio' ),
+				'tab' => \Elementor\controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->start_controls_tabs(
+			'ele_element_blog_post_wrapper_tabs'
+		);
+
+		$this->start_controls_tab(
+			'ele_element_blog_post_wrapper_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'elementrio' ),
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'ele_element_blog_post_wrapper_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-card',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'ele_element_blog_post_wrapper_box_shadow',
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-card',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'ele_element_blog_post_wrapper_border',
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-card',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'ele_element_blog_post_wrapper_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'elementrio' ),
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'ele_element_blog_post_hv_wrapper_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-card:hover',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'ele_element_blog_post_wrapper_hv_box_shadow',
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-card:hover',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'ele_element_blog_post_wrapper_hv_border',
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-card:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'ele_element_blog_post_wrapper_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'separator' => 'before ',
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'ele_element_blog_post_wrapper_padding',
+			[
+				'label' => esc_html__( 'Padding', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-card' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'ele_element_blog_post_wrapper_margin',
+			[
+				'label' => esc_html__( 'Margin', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-card' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// Blog Post Wrapper Style Section End
+
+		// Blog Post Title Style Section Start
+		$this->start_controls_section(
+			'ele_element_blog_post_title',
+			[
+				'label' => esc_html__( 'Title', 'elementrio' ),
+				'tab' => \Elementor\controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'ele_element_blog_post_title_typography',
+				'selector' => '{{WRAPPER}} .ele-element .entry-title',
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_post_title_color',
+			[
+				'label' => esc_html__( 'Color', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .entry-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .ele-element .entry-title > a' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_post_title_hv_color',
+			[
+				'label' => esc_html__( 'Hover Color', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .entry-title:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .ele-element .entry-title a:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'ele_element_blog_post_title_margin',
+			[
+				'label' => esc_html__( 'Margin', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .entry-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// Blog Post Title Style Section End
 	}
 
 	protected function render( ) {
