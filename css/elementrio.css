@@ -31,6 +31,43 @@
     .ele-element .elementrio-icon-box-button:hover {
       background-color: #0350d2; }
 
+.ele-element .post-meta-list span {
+  display: inline-block; }
+
+.ele-element .elementrio-post-btn {
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 15px 30px;
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #2575fc;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease; }
+  .ele-element .elementrio-post-btn:hover {
+    background-color: #0350d2; }
+
+.ele-element .entry-title {
+  color: #000;
+  font-size: 28px; }
+  .ele-element .entry-title a {
+    color: #000; }
+
+.ele-element .meta-author a, .ele-element .meta-date {
+  color: #000; }
+
+.ele-element .post-comment a, .ele-element .post-cat {
+  color: #000; }
+
 /* Grid Style css */
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   width: 100%;

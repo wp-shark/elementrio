@@ -86,7 +86,7 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'ele_element_blog_posts_content',
 			[
-				'label'     => esc_html__( 'Show Title', 'elementrio' ),
+				'label'     => esc_html__( 'Show Content', 'elementrio' ),
 				'type'      => \Elementor\Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Yes', 'elementrio' ),
 				'label_off' => esc_html__( 'No', 'elementrio' ),
@@ -610,10 +610,134 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 
 		// Blog Post Button  Style Section Start
 		$this->start_controls_section(
-			'ele_element_blog_post_button',
+			'ele_element_blog_post_button_style',
 			[
 				'label' => esc_html__( 'Button', 'elementrio' ),
 				'tab' => \Elementor\controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'ele_element_blog_post_button_typography',
+				'selector' => '{{WRAPPER}} .ele-element .ele-element .elementrio-post-btn',
+			]
+		);
+
+		$this->start_controls_tabs(
+			'ele_element_blog_post_button_tabs'
+		);
+
+		$this->start_controls_tab(
+			'ele_element_blog_post_button_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'elementrio' ),
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_post_button_color',
+			[
+				'label' => esc_html__( 'Color', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-btn' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'ele_element_blog_post_button_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-btn',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'ele_element_blog_post_button_border',
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-btn',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'ele_element_blog_post_button_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'elementrio' ),
+			]
+		);
+
+		$this->add_control(
+			'ele_element_blog_post_button_hv_color',
+			[
+				'label' => esc_html__( 'Color', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-btn:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'ele_element_blog_post_button_hv_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-btn:hover',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'ele_element_blog_post_button_hv_border',
+				'selector' => '{{WRAPPER}} .ele-element .elementrio-post-btn:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'ele_element_blog_post_button_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'separator' => 'before',
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'ele_element_blog_post_button_padding',
+			[
+				'label' => esc_html__( 'Padding', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'ele_element_blog_post_button_margin',
+			[
+				'label' => esc_html__( 'Margin', 'elementrio' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .ele-element .elementrio-post-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -634,7 +758,7 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 
 		$default    = [
 			'orderby' => array( 'date' => 'ASC' ),
-			'posts_per_page'    => 5,
+			'posts_per_page'    => $ele_element_blog_posts_num,
 			'offset'            => 0,
 			'post_status'       => 'publish'
 		];
@@ -648,18 +772,21 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 			<div class="ele-post-wrapper">
 				<div class="ele-post-container row">
 					<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-						<div class="col-md-6">
+						<div class="<?php echo esc_attr($ele_element_blog_posts_column); ?>">
 							<div class="elementrio-post-card">
-								<div class="elementrio-post-header">
-									<a href="<?php the_permalink(); ?>">
-										<img src="<?php the_post_thumbnail_url( esc_attr( 'large' ) ); ?>" class="elementrio-post-thumb" alt="<?php the_title(); ?>">
-									</a>
-								</div>
+								<?php if ( has_post_thumbnail() && $ele_element_blog_posts_feature_img == 'yes' ) : ?>
+									<div class="elementrio-post-header">
+										<a href="<?php the_permalink(); ?>">
+											<img src="<?php the_post_thumbnail_url( esc_attr( 'large' ) ); ?>" class="elementrio-post-thumb" alt="<?php the_title(); ?>">
+										</a>
+									</div>
+								<?php endif; ?>
 								<div class="elementrio-post-body ">
-
-									<h2 class="entry-title">
-										<a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a>
-									</h2>
+									<?php if ( $ele_element_blog_posts_title == 'yes' ) : ?>
+										<h2 class="entry-title">
+											<a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a>
+										</h2>
+									<?php endif; ?>
 
 									<div class="post-meta-list">
 										<span class="meta-author">
@@ -680,12 +807,15 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 										</span>
 									</div>
 
-									<p class="post-description"><?php echo esc_html( wp_trim_words(get_the_excerpt(), 20) ); ?></p>
+									<?php if( $ele_element_blog_posts_content == 'yes') : ?>
+										<p class="post-description"><?php echo esc_html( wp_trim_words(get_the_excerpt(), 20) ); ?></p>
+									<?php endif; 
 
-									<div class="btn-wrapper">
-										<a href="<?php the_permalink(); ?>" class="elementrio-post-btn ">
-										<i aria-hidden="true" class="far fa-moon"></i> Learn more </a>
-									</div>
+									if ($ele_element_blog_posts_show_more == 'yes') : ?>
+										<div class="btn-wrapper">
+											<a href="<?php the_permalink(); ?>" class="elementrio-post-btn "> Learn more </a>
+										</div>
+									<?php endif; ?>
 								</div>
 							</div>
 						</div>
