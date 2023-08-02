@@ -38,7 +38,7 @@ class Drop_Caps_Widget extends \Elementor\Widget_Base {
 			[
 				'label'         => esc_html__( 'Content', 'elementrio' ),
 				'type'          => Elementor\Controls_Manager::TEXTAREA,
-				'default'       => esc_html__( 'In this delightful rhyming tale, a human boy engages in wintry fun with a gaggle of kids made of snow. But as they scamper through the woods and get into all manner of trouble', 'elementrio' ),
+				'default'       => esc_html__( 'Lorem this delightful rhyming tale, a human boy engages in wintry fun with a gaggle of kids made of snow. But as they scamper through the woods and get into all manner of trouble', 'elementrio' ),
 				'placeholder'   => esc_html__( 'Enter Your Drop Caps Content.', 'elementrio' ),
 				'separator'=>'before',
 			]
@@ -59,7 +59,7 @@ class Drop_Caps_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => esc_html__( 'Color', 'elementrio' ),
 				'type' => Elementor\Controls_Manager::COLOR,
-				'default' => '#0000',
+				'default' => '#000',
 				'selectors' => [
 					'{{WRAPPER}} .ele-dropcap-cotnent' => 'color: {{VALUE}};',
 				],
