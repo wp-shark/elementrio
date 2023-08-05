@@ -1,1 +1,3 @@
+After Version 1.0.0
+Add: Drop Caps Widget
 Add: Blog Post Widget

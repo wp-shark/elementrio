@@ -44,3 +44,4 @@ add_action('elementor/frontend/after_register_scripts', 'elementrio_enqueue_scri
 require_once(__DIR__ . '/config/widget-lists.php');
 add_action('elementor/widgets/register', 'register_blog_post_widget');
 add_action('elementor/widgets/register', 'register_icon_box_widget');
+add_action('elementor/widgets/register', 'register_drop_caps_widget');
