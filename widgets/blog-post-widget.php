@@ -12,7 +12,7 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-icon-box';
+		return 'eicon-posts-grid';
 	}
 
 	public function get_categories() {

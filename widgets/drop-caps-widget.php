@@ -12,7 +12,7 @@ class Drop_Caps_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-icon-box';
+		return 'eicon-editor-paragraph';
 	}
 
 	public function get_categories() {
