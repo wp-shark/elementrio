@@ -136,7 +136,7 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'ele_element_blog_post_wrapper',
 			[
-				'label' => esc_html__( 'Warapper', 'elementrio' ),
+				'label' => esc_html__( 'Wrapper', 'elementrio' ),
 				'tab' => \Elementor\controls_Manager::TAB_STYLE,
 			]
 		);
@@ -245,6 +245,13 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Margin', 'elementrio' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
+				'default' => [
+					'top' => '',
+					'right' => '',
+					'bottom' => '30',
+					'left' => '',
+					'unit' => 'px',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .ele-element .elementrio-post-card' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
