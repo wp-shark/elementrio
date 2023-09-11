@@ -1,1 +1,0 @@
-sass --watch D:\xammp\htdocs\xs-test\wp-content\plugins\elementrio\css\scss:D:\xammp\htdocs\xs-test\wp-content\plugins\elementrio\css\elementrio.css
