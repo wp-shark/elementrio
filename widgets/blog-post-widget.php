@@ -790,19 +790,19 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 
 									<div class="post-meta-list">
 										<span class="meta-author">
-											<i aria-hidden="true" class="icon icon-user"></i>
+											<i aria-hidden="true" class="icon eicon-user-circle-o"></i>
 											<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author-name"><?php the_author_meta('display_name'); ?></a>
 										</span>
 										<span class="meta-date">
-											<i aria-hidden="true" class="icon icon-calendar3"></i>
+											<i aria-hidden="true" class="icon eicon-date"></i>
 											<?php echo esc_html( get_the_date() ); ?>
 										</span>
 										<span class="post-cat">
-											<i aria-hidden="true" class="icon icon-folder"></i>
+											<i aria-hidden="true" class="icon eicon-folder-o"></i>
 											<?php echo get_the_category_list( ' | ' ); // phpcs:ignore WordPress.Security.EscapeOutput -- Already escaped by WordPress ?>
 										</span>
 										<span class="post-comment">
-											<i aria-hidden="true" class="icon icon-comment"></i>
+											<i aria-hidden="true" class="icon eicon-comments"></i>
 											<a href="<?php comments_link(); ?>"><?php echo esc_html( get_comments_number() ); ?></a>
 										</span>
 									</div>
