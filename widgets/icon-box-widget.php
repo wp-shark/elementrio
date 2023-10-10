@@ -238,7 +238,7 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name' => 'ele_icon_box_icon_bg',
-				'types' => [ 'classic', 'gradient'],
+				'types' => [ 'classic', 'gradient' ],
 				'exclude' => ['image'],
 				'selector' => '{{WRAPPER}} .ele-element .elementrio-icon, {{WRAPPER}} .ele-element .elementrio-icon svg',
 			]

@@ -1,8 +1,8 @@
-=== Elementrio Elementor addons ===
+=== Elementrio ===
 Contributors: @iqbal1hossain
 Tags: Elementor Icon Box Widget
 Requires at least: 5.2
-Tested up to: 6.2
+Tested up to: 6.3
 Requires PHP: 7.2
 Stable tag: 1.0.0
 License: GPLv2 or later 

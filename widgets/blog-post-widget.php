@@ -8,7 +8,7 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Ele Blog Post', 'elementrio', 'ele' );
+		return esc_html__( 'Ele Blog Post', 'elementrio' );
 	}
 
 	public function get_icon() {
@@ -751,79 +751,76 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 		echo '</div>';
 	}
 
-	protected function render_raw( ) {
-
+	protected function render_raw() {
 		$settings = $this->get_settings_for_display();
 		extract($settings);
-
-		$default    = [
-			'orderby' => array( 'date' => 'ASC' ),
-			'posts_per_page'    => $ele_element_blog_posts_num,
-			'offset'            => 0,
-			'post_status'       => 'publish'
+	
+		$default = [
+			'orderby' => ['date' => 'ASC'],
+			'posts_per_page' => absint($ele_element_blog_posts_num),
+			'offset' => 0,
+			'post_status' => 'publish',
 		];
 
-		
-
 		// Post Query
-		$post_query = new \WP_Query( $default ); 
-
+		$post_query = new \WP_Query($default);
 		?>
-			<div class="ele-post-wrapper">
-				<div class="ele-post-container row">
-					<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-						<div class="<?php echo esc_attr($ele_element_blog_posts_column); ?>">
-							<div class="elementrio-post-card">
-								<?php if ( has_post_thumbnail() && $ele_element_blog_posts_feature_img == 'yes' ) : ?>
-									<div class="elementrio-post-header">
-										<a href="<?php the_permalink(); ?>">
-											<img src="<?php the_post_thumbnail_url( esc_attr( 'large' ) ); ?>" class="elementrio-post-thumb" alt="<?php the_title(); ?>">
-										</a>
+
+		<div class="ele-post-wrapper">
+			<div class="ele-post-container row">
+				<?php while ($post_query->have_posts()) : $post_query->the_post(); ?>
+					<div class="<?php echo esc_attr($ele_element_blog_posts_column); ?>">
+						<div class="elementrio-post-card">
+							<?php if (has_post_thumbnail() && $ele_element_blog_posts_feature_img == 'yes') : ?>
+								<div class="elementrio-post-header">
+									<a href="<?php the_permalink(); ?>">
+										<img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'large')); ?>"
+											class="elementrio-post-thumb" alt="<?php echo esc_attr(get_the_title()); ?>">
+									</a>
+								</div>
+							<?php endif; ?>
+							<div class="elementrio-post-body">
+								<?php if ($ele_element_blog_posts_title == 'yes') : ?>
+									<h2 class="entry-title">
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</h2>
+								<?php endif; ?>
+	
+								<div class="post-meta-list">
+									<span class="meta-author">
+										<i aria-hidden="true" class="icon eicon-user-circle-o"></i>
+										<a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
+											class="author-name"><?php the_author_meta('display_name'); ?></a>
+									</span>
+									<span class="meta-date">
+										<i aria-hidden="true" class="icon eicon-date"></i>
+										<?php echo esc_html(get_the_date()); ?>
+									</span>
+									<span class="post-cat">
+										<i aria-hidden="true" class="icon eicon-folder-o"></i>
+										<?php echo get_the_category_list(' | '); ?>
+									</span>
+									<span class="post-comment">
+										<i aria-hidden="true" class="icon eicon-comments"></i>
+										<a href="<?php comments_link(); ?>"><?php echo esc_html(get_comments_number()); ?></a>
+									</span>
+								</div>
+	
+								<?php if ($ele_element_blog_posts_content == 'yes') : ?>
+									<p class="post-description"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 20)); ?></p>
+								<?php endif;
+	
+								if ($ele_element_blog_posts_show_more == 'yes') : ?>
+									<div class="btn-wrapper">
+										<a href="<?php the_permalink(); ?>" class="elementrio-post-btn">Learn more</a>
 									</div>
 								<?php endif; ?>
-								<div class="elementrio-post-body ">
-									<?php if ( $ele_element_blog_posts_title == 'yes' ) : ?>
-										<h2 class="entry-title">
-											<a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a>
-										</h2>
-									<?php endif; ?>
-
-									<div class="post-meta-list">
-										<span class="meta-author">
-											<i aria-hidden="true" class="icon eicon-user-circle-o"></i>
-											<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author-name"><?php the_author_meta('display_name'); ?></a>
-										</span>
-										<span class="meta-date">
-											<i aria-hidden="true" class="icon eicon-date"></i>
-											<?php echo esc_html( get_the_date() ); ?>
-										</span>
-										<span class="post-cat">
-											<i aria-hidden="true" class="icon eicon-folder-o"></i>
-											<?php echo get_the_category_list( ' | ' ); // phpcs:ignore WordPress.Security.EscapeOutput -- Already escaped by WordPress ?>
-										</span>
-										<span class="post-comment">
-											<i aria-hidden="true" class="icon eicon-comments"></i>
-											<a href="<?php comments_link(); ?>"><?php echo esc_html( get_comments_number() ); ?></a>
-										</span>
-									</div>
-
-									<?php if( $ele_element_blog_posts_content == 'yes') : ?>
-										<p class="post-description"><?php echo esc_html( wp_trim_words(get_the_excerpt(), 20) ); ?></p>
-									<?php endif; 
-
-									if ($ele_element_blog_posts_show_more == 'yes') : ?>
-										<div class="btn-wrapper">
-											<a href="<?php the_permalink(); ?>" class="elementrio-post-btn "> Learn more </a>
-										</div>
-									<?php endif; ?>
-								</div>
 							</div>
 						</div>
-					<?php endwhile; ?>
-				</div>
+					</div>
+				<?php endwhile; ?>
 			</div>
+		</div>
 		<?php
-
 	}
-
 }
