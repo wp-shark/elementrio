@@ -43,10 +43,7 @@ class Elementrio_Version {
     }
 }
 
-// You can retrieve the plugin version like this:
-//$elementrio_version = Elementrio_Version::get_plugin_version();
-
-
+// Show admin notice if Elementor is not installed or activated
 function elementrio_fail_load() {
     $class = 'notice notice-error';
     $message = __('Elementrio requires Elementor to be active.', 'elementrio');
