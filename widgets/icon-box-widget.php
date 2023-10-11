@@ -239,7 +239,6 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 			[
 				'name' => 'ele_icon_box_icon_bg',
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => ['image'],
 				'selector' => '{{WRAPPER}} .ele-element .elementrio-icon, {{WRAPPER}} .ele-element .elementrio-icon svg',
 			]
 		);
@@ -286,7 +285,6 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 			[
 				'name' => 'ele_icon_box_icon_hv_bg',
 				'types' => [ 'classic', 'gradient'],
-				'exclude' => ['image'],
 				'selector' => '{{WRAPPER}} .ele-element .elementrio-icon:hover, {{WRAPPER}} .ele-element .elementrio-icon:hover svg',
 			]
 		);
@@ -639,7 +637,6 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 			[
 				'name' => 'ele_icon_box_button_bg',
 				'types' => [ 'classic', 'gradient'],
-				'exclude' => ['image'],
 				'selector' => '{{WRAPPER}} .ele-element .elementrio-icon-box-button',
 			]
 		);
@@ -685,7 +682,6 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 			[
 				'name' => 'ele_icon_box_button_hv_bg',
 				'types' => [ 'classic', 'gradient'],
-				'exclude' => ['image'],
 				'selector' => '{{WRAPPER}} .ele-element .elementrio-icon-box-button:hover',
 			]
 		);

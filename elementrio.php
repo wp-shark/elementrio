@@ -9,7 +9,6 @@
 * Plugin URI: https://themezam.com/plugin/elementrio/
 * License: GPL v2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-* Update URI: https://themezam.com/elementrio/
 * Text Domain: elementrio
 */
 
