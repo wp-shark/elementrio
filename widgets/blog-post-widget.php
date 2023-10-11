@@ -798,7 +798,7 @@ class Blog_post_Widget extends \Elementor\Widget_Base {
 									</span>
 									<span class="post-cat">
 										<i aria-hidden="true" class="icon eicon-folder-o"></i>
-										<?php echo get_the_category_list(' | '); ?>
+										<?php echo get_the_category_list( ' | ' ); // phpcs:ignore WordPress.Security.EscapeOutput -- Already escaped by WordPress ?>
 									</span>
 									<span class="post-comment">
 										<i aria-hidden="true" class="icon eicon-comments"></i>
