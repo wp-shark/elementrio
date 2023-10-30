@@ -1,6 +1,6 @@
 === Elementrio ===
-Contributors: @iqbal1hossain
-Tags: Elementor Icon Box Widget
+Contributors: iqbal1hossain
+Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widgets, Elementor modules, addons
 Requires at least: 5.2
 Tested up to: 6.3
 Requires PHP: 7.2
