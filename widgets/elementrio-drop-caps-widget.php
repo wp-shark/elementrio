@@ -1,7 +1,7 @@
 <?php
 if (! defined( 'ABSPATH' ) ) exit;
 
-class Drop_Caps_Widget extends \Elementor\Widget_Base { 
+class Elementrio_Drop_Caps_Widget extends \Elementor\Widget_Base { 
 
 	public function get_name() {
 		return 'drop-caps-widget';
