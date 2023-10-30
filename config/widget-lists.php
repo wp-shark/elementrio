@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 // Register Blog Post widget
 function elementrio_register_blog_post_widget($widgets_manager) {
 	require_once(ELEMENTRIO_PLUGIN_DIR . 'widgets/elementrio-blog-post-widget.php');
-	$widgets_manager->register(new \Elementrio_Blog_post_Widget());
+	$widgets_manager->register(new \Elementrio_Blog_Post_Widget());
 }
 
 // Register Icon Box widget
