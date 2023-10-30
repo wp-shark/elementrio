@@ -1,7 +1,7 @@
 <?php
 if (! defined( 'ABSPATH' ) ) exit;
 
-class Blog_post_Widget extends \Elementor\Widget_Base { 
+class Elementrio_Blog_Post_Widget extends \Elementor\Widget_Base { 
 
 	public function get_name() {
 		return 'blog-post-widget';

@@ -1,6 +1,6 @@
 <?php
 if (! defined( 'ABSPATH' ) ) exit;
-class Icon_Box_Widget extends \Elementor\Widget_Base {
+class Elementrio_Icon_Box_Widget extends \Elementor\Widget_Base {
 
 	public function get_name() {
 		return 'icon-box-widget';
@@ -19,7 +19,7 @@ class Icon_Box_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'Icon', 'Box', 'elementrio' ];
+		return [ 'icon', 'box', 'icon-box', 'elementrio' ];
 	}
 
 	// Register elementrio controls
