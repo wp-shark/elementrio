@@ -15,8 +15,7 @@ Elementor Addons come with Header Footer Builder, Mega Menu Builder, Free Elemen
 
 == Description ==
 
-**Elementrio Elementor addons** is an widgets builder addons for Elementor Page Builder. It includes the most comprehensive widget,
-**3 custom Elementor widgets** such as an Advanced Icon Box, Blog Posts, Drop Caps.
+**Elementrio Elementor addons** is an widgets builder addons for Elementor Page Builder. It includes the most comprehensive widget, **3 custom Elementor widgets** such as an Advanced Icon Box, Blog Posts, Drop Caps.
 
 **Elementrio** brings you exclusive features that redefine your experience.
 
