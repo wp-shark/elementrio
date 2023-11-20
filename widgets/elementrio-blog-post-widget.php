@@ -16,11 +16,11 @@ class Elementrio_Blog_Post_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'basic' ];
+		return [ 'basic', 'elementrio' ];
 	}
 
 	public function get_keywords() {
-		return [ 'blog', 'post', 'blog-post','elementrio' ];
+		return [ 'blog', 'post', 'blog-post','elementrio', 'ele' ];
 	}
 
 	// Register elementrio controls

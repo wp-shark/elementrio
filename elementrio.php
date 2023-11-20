@@ -65,6 +65,9 @@ function elementrio_enqueue_script() {
 }
 add_action('elementor/frontend/after_register_scripts', 'elementrio_enqueue_script');
 
+// Include category registration file
+require_once(__DIR__ . '/config/categories-registered.php');
+
 // Include widget registration file and register widgets
 require_once(__DIR__ . '/config/widget-lists.php');
 add_action('elementor/widgets/register', 'elementrio_register_blog_post_widget');
