@@ -136,7 +136,7 @@ class Elementrio_Blog_Post_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'ele_element_blog_post_wrapper',
 			[
-				'label' => esc_html__( 'Warapper', 'elementrio' ),
+				'label' => esc_html__( 'Wrapper', 'elementrio' ),
 				'tab' => \Elementor\controls_Manager::TAB_STYLE,
 			]
 		);
