@@ -2,7 +2,7 @@
 Contributors: iqbal1hossain
 Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widgets, Elementor modules, addons
 Requires at least: 5.2
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 7.2
 Stable tag: 1.0.0
 License: GPLv2 or later 
@@ -16,6 +16,14 @@ Elementor Addons come with Header Footer Builder, Mega Menu Builder, Free Elemen
 == Description ==
 
 **Elementrio Elementor addons** is an widgets builder addons for Elementor Page Builder. It includes the most comprehensive widget,
+**3 custom Elementor widgets** such as an Advanced Icon Box, Blog Posts, Drop Caps.
+
+**Elementrio** brings you exclusive features that redefine your experience.
+
+Furthermore, Elementor offers distinctive and potent custom controls, including Image Picker, Ajax Select2, Advanced Widgets, and a plethora of other features. Why juggle between multiple Elementor addons when everything is seamlessly integrated under one roof? Try Elementrio today and feel the difference.
+
+### Expert Support
+We have extra-ordinary support team ready to help you. Ask your questions in the support forum.
 
 == Changelog ==
 
