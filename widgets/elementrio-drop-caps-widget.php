@@ -16,11 +16,11 @@ class Elementrio_Drop_Caps_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'basic' ];
+		return [ 'basic', 'elementrio' ];
 	}
 
 	public function get_keywords() {
-		return [ 'drop', 'caps', 'dropcaps', 'elementrio' ];
+		return [ 'drop', 'caps', 'dropcaps', 'elementrio', 'ele' ];
 	}
 
 	// Register elementrio controls

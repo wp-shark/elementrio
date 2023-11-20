@@ -15,11 +15,11 @@ class Elementrio_Icon_Box_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'basic' ];
+		return [ 'basic', 'elementrio' ];
 	}
 
 	public function get_keywords() {
-		return [ 'icon', 'box', 'icon-box', 'elementrio' ];
+		return [ 'icon', 'box', 'icon-box', 'elementrio', 'ele' ];
 	}
 
 	// Register elementrio controls
