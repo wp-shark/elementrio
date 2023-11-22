@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Elementrio
 * Description: An Elementor addon plugin for Elementor widgets.
-* Version: 1.0.0
+* Version: 1.1.0
 * Requires at least: 5.2
 * Requires PHP: 7.2
 * Author: Iqbal Hossain
@@ -36,7 +36,7 @@ if (!did_action('elementor/loaded')) {
  * @since 1.0.0
  */
 class Elementrio_Version {
-    const PLUGIN_VERSION = '1.0.0';
+    const PLUGIN_VERSION = '1.1.0';
 
     public static function get_plugin_version() {
         return self::PLUGIN_VERSION;
