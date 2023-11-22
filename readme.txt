@@ -4,7 +4,7 @@ Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widge
 Requires at least: 5.2
 Tested up to: 6.4
 Requires PHP: 7.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,10 +21,29 @@ Elementor Addons come with Header Footer Builder, Mega Menu Builder, Free Elemen
 
 Furthermore, Elementor offers distinctive and potent custom controls, including Image Picker, Ajax Select2, Advanced Widgets, and a plethora of other features. Why juggle between multiple Elementor addons when everything is seamlessly integrated under one roof? Try Elementrio today and feel the difference.
 
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dYPl8_0VXCk&t=22s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ### Expert Support
 We have extra-ordinary support team ready to help you. Ask your questions in the support forum.
 
+== Screenshots ==
+
+1. Installation
+
+
+== Upgrade Notice ==
+
+WordPress 4.9+ and Elementor 2.0+ required.
+
+
+
 == Changelog ==
+Elementrio Version 1.1.0
+Performance improvement
+Fixed: CSS bug fixed
 
 * Initial release
 

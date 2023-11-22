@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Elementrio
 * Description: An Elementor addon plugin for Elementor widgets.
-* Version: 1.0.0
+* Version: 1.1.0
 * Requires at least: 5.2
 * Requires PHP: 7.2
 * Author: Iqbal Hossain
