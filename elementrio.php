@@ -36,7 +36,7 @@ if (!did_action('elementor/loaded')) {
  * @since 1.0.0
  */
 class Elementrio_Version {
-    const PLUGIN_VERSION = '1.0.0';
+    const PLUGIN_VERSION = '1.1.0';
 
     public static function get_plugin_version() {
         return self::PLUGIN_VERSION;
