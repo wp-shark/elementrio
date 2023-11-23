@@ -1,0 +1,22 @@
+.ele-pages-main-wrapper {
+	padding: 50px 30px;
+}
+
+.ele-welcome-section {
+	text-align: center;
+	padding: 8px;
+	background: #E1E6F4;
+	border-radius: 10px;
+}
+
+.ele-welcome-title {
+	font-size: 35px;
+	font-weight: 500;
+	color: #041137;
+	margin-bottom: 25px;
+}
+
+.ele-welcome-description {
+	font-size: 16px;
+    color: #727272;
+ }
