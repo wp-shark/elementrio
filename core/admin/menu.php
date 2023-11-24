@@ -17,7 +17,7 @@ function elementrio_menu_content() {
 				<div class="ele-pages-left-sidebar">
 					<div class="ele-pages-left-content-inner">
 						<div class="ele-pages-left-content-inner-title">
-							<h3>How to start Elementrio</h3>
+							<h3>How To Start Elementrio</h3>
 						</div>
 
 						<div class="ele-pages-left-content-inner-description">
