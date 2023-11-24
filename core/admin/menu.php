@@ -34,7 +34,7 @@ function elementrio_menu_content() {
 						</div>
 
 						<div class="ele-pages-left-content-inner-btn">
-							<a href="#"> Create New Page </a>
+							<a href="https://www.youtube.com/@elementrio"> Learn More </a>
 						</div>
 					</div>
 				</div>
