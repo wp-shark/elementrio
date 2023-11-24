@@ -5,7 +5,7 @@ if (! defined( 'ABSPATH' ) ) exit;
  */
 function elementrio_menu_page() {
     add_menu_page( 
-        __( 'Custom Menu Title', 'elementrio' ),
+        __( 'Elementrio Menu', 'elementrio' ),
         'Elementrio',
         'manage_options',
         'elementrio',
