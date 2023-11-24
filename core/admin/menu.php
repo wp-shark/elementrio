@@ -1,4 +1,5 @@
 <?php
+if (! defined( 'ABSPATH' ) ) exit;
 /**
  * Display a Elementrio menu page
  */
