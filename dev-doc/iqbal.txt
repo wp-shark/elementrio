@@ -1,3 +1,6 @@
+After Version 1.1.0
+Add: Dashboard Elementrio
+
 After Version 1.0.0
 Add: Include category registration file
 Add: Drop Caps Widget

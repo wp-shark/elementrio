@@ -3,6 +3,7 @@
     "node-sass": "^9.0.0"
   },
   "scripts": {
-	"build-css": "node-sass assets/css/scss/main.scss assets/css/elementrio.css"
+    "build-css": "node-sass assets/css/scss/main.scss assets/css/elementrio.css",
+    "admin-css": "node-sass core/admin/css/scss/admin.scss core/admin/css/admin-styles.css"
   }
 }
