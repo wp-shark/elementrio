@@ -1,7 +1,18 @@
+// Responsive Variables
+$xxxl: 'only screen and (min-width: 1601px) and (max-width: 1700px)';
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1600px)';
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs:'(max-width: 575px)';
+
+// Pages Main Wrapper
 .ele-pages-main-wrapper {
 	padding: 50px 30px;
 }
 
+// Welcome Section
 .ele-welcome {
 	&-section {
 		text-align: center;
@@ -16,15 +27,23 @@
 		font-weight: 500;
 		color: #041137;
 		margin-bottom: 25px;
+		line-height: 1;
 	}
 
 	&-description {
 		font-size: 16px;
 		color: #727272;
 		color: #041137;
+
+		br {
+			@media #{$md, $sm, $xs} {
+				display: none;
+			}
+		}
 	 }
 }
 
+// Content Section
 .ele-pages {
 	&-content {
 		margin-top: 30px;
@@ -33,15 +52,29 @@
 		grid-template-rows: 1fr;
 		grid-column-gap: 20px;
 		grid-row-gap: 0px;
+
+		@media #{$xxl}{
+			grid-template-columns: 3fr 2fr;
+		}
+
+		@media #{$xl, $lg, $md, $sm, $xs} {
+			grid-template-columns: 3fr;
+		}
 	}
 
+	// Content Section Left Sidebar
 	&-left-sidebar{
 		border-radius: 6px;
 		background: #FFF;
 		box-shadow: 0px 1px 1px 0px rgba(17, 23, 34, 0.20);
 		padding: 30px;
+
+		@media #{$xl, $lg, $md, $sm, $xs} {
+			margin-bottom: 30px;
+		}
 	}
 
+	// Content Section Right Sidebar
 	&-right-sidebar {
 		border-radius: 6px;
 		background: #FFF;
@@ -49,6 +82,7 @@
 		padding: 30px;
 	}
 
+	// Content Section left Sidebar Inner
 	&-left-content-inner {
 		&-btn {
 			margin-top: 15px;
@@ -99,7 +133,16 @@
 		}
 	}
 
+	// Content Section Right Sidebar Inner
 	&-right-content-inner {
+
+		@media #{$xl, $lg, $md} {
+			display: grid;
+			grid-template-columns: 2fr 2fr;
+			row-gap: 30px;
+			column-gap: 30px;
+		}
+
 		&-btn {
 			margin-top: 15px;
 
@@ -117,6 +160,11 @@
 			border: 1px solid #E1E6F4;
 			border-radius: 6px;
 			margin-bottom: 30px;
+
+			@media #{$xl, $lg, $md} {
+				margin-bottom: 0;
+			}
+
 			&:last-child {
 				margin-bottom: 0;
 			}
