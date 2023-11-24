@@ -1,0 +1,135 @@
+.ele-pages-main-wrapper {
+	padding: 50px 30px;
+}
+
+.ele-welcome {
+	&-section {
+		text-align: center;
+		padding: 8px;
+		background: #FFF;
+		box-shadow: 0px 1px 1px 0px rgba(17, 23, 34, 0.20);
+		border-radius: 6px;
+	}
+
+	&-title {
+		font-size: 35px;
+		font-weight: 500;
+		color: #041137;
+		margin-bottom: 25px;
+	}
+
+	&-description {
+		font-size: 16px;
+		color: #727272;
+		color: #041137;
+	 }
+}
+
+.ele-pages {
+	&-content {
+		margin-top: 30px;
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 0px;
+	}
+
+	&-left-sidebar{
+		border-radius: 6px;
+		background: #FFF;
+		box-shadow: 0px 1px 1px 0px rgba(17, 23, 34, 0.20);
+		padding: 30px;
+	}
+
+	&-right-sidebar {
+		border-radius: 6px;
+		background: #FFF;
+		box-shadow: 0px 1px 1px 0px rgba(17, 23, 34, 0.20);
+		padding: 30px;
+	}
+
+	&-left-content-inner {
+		&-btn {
+			margin-top: 15px;
+
+			a {
+				display: inline-block;
+				border-radius: 6px;
+				background: #FFF;
+				box-shadow: 0px 1px 1px 0px rgba(17, 23, 34, 0.20);
+				border: 1px solid rgba(17, 23, 34, 0.20);
+				padding: 15px 20px;
+				text-decoration: none;
+				line-height: 1;
+				font-size: 14px;
+				font-weight: 500;
+				color: #111722;
+				transition: 0.3s;
+
+				&:hover {
+					background: #3B67FE;
+					color: #FFF;
+				}
+			}
+		}
+
+		&-video {
+			border-radius: 6px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+		&-title {
+			h3 {
+				font-size: 28px;
+				font-weight: 700;
+				color: #111722;
+				line-height: 1;
+				margin-top: 0;
+			}
+		}
+
+		&-description {
+			p {
+				font-size: 16px;
+				color: #4D4E50;
+				line-height: 26px;
+			}
+		}
+	}
+
+	&-right-content-inner {
+		&-btn {
+			margin-top: 15px;
+
+			a {
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: normal;
+				color: #111722;
+			}
+		}
+
+		&-item {
+			padding: 20px;
+			border: 1px solid #E1E6F4;
+			border-radius: 6px;
+			margin-bottom: 30px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&-title {
+			display: flex;
+			h3 {
+				margin-top: 0;
+				margin-bottom: 10px;
+				margin-left: 8px;
+				color: #111722;
+			}
+		}
+	}
+}

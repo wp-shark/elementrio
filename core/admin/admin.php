@@ -9,8 +9,8 @@ function elementrio_menu_page() {
         'manage_options',
         'custompage',
         'elementrio_menu_content',
-        plugins_url( 'myplugin/images/icon.png' ),
-        5
+        plugins_url( 'images/elementrio.svg',  __FILE__),
+        '58.6'
     );
 }
 add_action( 'admin_menu', 'elementrio_menu_page' );
