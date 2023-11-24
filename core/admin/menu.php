@@ -4,7 +4,7 @@ if (! defined( 'ABSPATH' ) ) exit;
  * Display a Elementrio menu page
  */
 function elementrio_menu_content() {
-    // esc_html_e( 'Admin Page Test', 'elementrio' );
+    // esc_html_e( 'Admin Page Contnent', 'elementrio' );
 	?>
 		<div class="ele-pages-main-wrapper">
 			<div class="ele-welcome-section">
