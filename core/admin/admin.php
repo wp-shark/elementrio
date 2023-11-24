@@ -7,7 +7,7 @@ function elementrio_menu_page() {
         __( 'Custom Menu Title', 'elementrio' ),
         'Elementrio',
         'manage_options',
-        'custompage',
+        'elementrio',
         'elementrio_menu_content',
         plugins_url( 'images/elementrio.svg',  __FILE__),
         '58.6'
