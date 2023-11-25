@@ -20,3 +20,9 @@ function elementrio_register_drop_caps_widget($widgets_manager) {
 	require_once(ELEMENTRIO_PLUGIN_DIR . 'widgets/elementrio-drop-caps-widget.php');
 	$widgets_manager->register(new \Elementrio_Drop_Caps_Widget());
 }
+
+// Register Progress Bar widget
+function elementrio_register_progress_bar_widget($widgets_manager) {
+	require_once(ELEMENTRIO_PLUGIN_DIR . 'widgets/elementrio-progress-bar-widget.php');
+	$widgets_manager->register(new \Elementrio_Progress_Bar_Widget());
+}
