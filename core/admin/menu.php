@@ -34,7 +34,7 @@ function elementrio_menu_content() {
 						</div>
 
 						<div class="ele-pages-left-content-inner-btn">
-							<a href="https://www.youtube.com/@elementrio"> Learn More </a>
+							<a target="_blank" href="https://www.youtube.com/@elementrio"> Learn More </a>
 						</div>
 					</div>
 				</div>
@@ -53,7 +53,7 @@ function elementrio_menu_content() {
 								<p> Feel free to reach out if you ever need a hand. Our support team is always there for you. </p>
 							</div>
 							<div class="ele-pages-right-content-inner-btn">
-								<a href="https://wordpress.org/support/plugin/elementrio/">Create Ticket</a>
+								<a target="_blank" href="https://wordpress.org/support/plugin/elementrio/">Create Ticket</a>
 							</div>
 						</div>
 
@@ -73,7 +73,7 @@ function elementrio_menu_content() {
 								<p> Go through our huge collection of elements and get fresh new design ideas for your websites. </p>
 							</div>
 							<div class="ele-pages-right-content-inner-btn">
-								<a href="https://www.youtube.com/@elementrio">Explore Now</a>
+								<a target="_blank" href="https://www.youtube.com/@elementrio">Explore Now</a>
 							</div>
 						</div>
 
@@ -94,7 +94,7 @@ function elementrio_menu_content() {
 								<p> Be a part of the Elementrio community, connect users, share experiences, and stay informed. </p>
 							</div>
 							<div class="ele-pages-right-content-inner-btn">
-								<a href="https://www.facebook.com/groups/353044364039109">Join Now</a>
+								<a target="_blank" href="https://www.facebook.com/groups/353044364039109">Join Now</a>
 							</div>
 						</div>
 
@@ -117,7 +117,7 @@ function elementrio_menu_content() {
 								<p> Take your a minute to review the plugin and spread the love to encourage us to keep it going. </p>
 							</div>
 							<div class="ele-pages-right-content-inner-btn">
-								<a href="https://wordpress.org/support/plugin/elementrio/reviews/">Review Now</a>
+								<a target="_blank" href="https://wordpress.org/support/plugin/elementrio/reviews/">Review Now</a>
 							</div>
 						</div>
 					</div>
