@@ -4,7 +4,7 @@ Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widge
 Requires at least: 5.2
 Tested up to: 6.4
 Requires PHP: 7.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,11 @@ WordPress 4.9+ and Elementor 2.0+ required.
 
 
 == Changelog ==
+Elementrio Version 1.1.1
+Added: Dashboard
+Added: Widgets Category
+Fixed: CSS bug fixed
+
 Elementrio Version 1.1.0
 Performance improvement
 Fixed: CSS bug fixed
