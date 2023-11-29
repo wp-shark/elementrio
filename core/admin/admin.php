@@ -10,7 +10,7 @@ function elementrio_menu_page() {
         'manage_options',
         'elementrio',
         'elementrio_menu_content',
-        plugins_url( 'images/elementrio.svg',  __FILE__),
+        plugins_url( 'images/elementrio-logo.svg',  __FILE__),
         '58.6'
     );
 }

@@ -59,11 +59,19 @@ function elementrio_enqueue_styles() {
 add_action('elementor/frontend/after_enqueue_styles', 'elementrio_enqueue_styles');
 
 // Enqueue Elementrio plugin's custom js
+function elementrio_enqueue_pscript() {
+    $elementrio_version = Elementrio_Version::get_plugin_version();
+    wp_enqueue_script('elementrio-chart', ELEMENTRIO_PLUGIN_URL . 'assets/library/chart/chart.min.js', array(), $elementrio_version, true);
+}
+add_action('elementor/frontend/after_register_scripts', 'elementrio_enqueue_pscript');
+
+// Enqueue Elementrio plugin's custom js
 function elementrio_enqueue_script() {
     $elementrio_version = Elementrio_Version::get_plugin_version();
-    wp_enqueue_script('elementrio-js', ELEMENTRIO_PLUGIN_URL . 'assets/js/elementrio.js', array(), $elementrio_version, true);
+    wp_enqueue_script('elementrio', ELEMENTRIO_PLUGIN_URL . 'assets/js/elementrio.js', array(), $elementrio_version, true);
 }
 add_action('elementor/frontend/after_register_scripts', 'elementrio_enqueue_script');
+
 
 // Include category registration file
 require_once(__DIR__ . '/config/categories-registered.php');
@@ -73,6 +81,7 @@ require_once(__DIR__ . '/config/widget-lists.php');
 add_action('elementor/widgets/register', 'elementrio_register_blog_post_widget');
 add_action('elementor/widgets/register', 'elementrio_register_icon_box_widget');
 add_action('elementor/widgets/register', 'elementrio_register_drop_caps_widget');
+add_action('elementor/widgets/register', 'elementrio_register_chart_widget');
 
 // Include admin files
 require_once(__DIR__ . '/core/admin/admin.php');
