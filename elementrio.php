@@ -74,6 +74,9 @@ add_action('elementor/widgets/register', 'elementrio_register_blog_post_widget')
 add_action('elementor/widgets/register', 'elementrio_register_icon_box_widget');
 add_action('elementor/widgets/register', 'elementrio_register_drop_caps_widget');
 
+// Include modules lists
+require_once(__DIR__ . '/config/module-lists.php');
+
 // Include admin files
 require_once(__DIR__ . '/core/admin/admin.php');
 require_once(__DIR__ . '/core/admin/menu.php');
