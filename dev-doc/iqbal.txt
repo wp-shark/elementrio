@@ -1,3 +1,6 @@
+After Version 1.1.1
+Add: Glass Morphism Module
+
 After Version 1.1.0
 Add: Dashboard Elementrio
 
