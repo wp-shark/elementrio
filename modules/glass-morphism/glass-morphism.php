@@ -7,6 +7,11 @@ class Elementrio_Morphism_Control {
 
 	public function __construct() {
 		add_action('elementor/element/common/_section_style/after_section_end', [$this, 'morphism_controls_section'], 1);
+		add_action( 'elementor/element/column/section_advanced/after_section_end', [ $this, 'morphism_controls_section' ], 1 );
+		add_action( 'elementor/element/section/section_advanced/after_section_end', [ $this, 'morphism_controls_section' ], 1 );
+
+		// Flexbox Container support
+		add_action( 'elementor/element/container/section_layout/after_section_end', array( $this, 'morphism_controls_section' ) );
 	}
 
 	public function morphism_controls_section($element) {
