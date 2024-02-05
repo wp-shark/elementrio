@@ -73,6 +73,7 @@ require_once(__DIR__ . '/config/widget-lists.php');
 add_action('elementor/widgets/register', 'elementrio_register_blog_post_widget');
 add_action('elementor/widgets/register', 'elementrio_register_icon_box_widget');
 add_action('elementor/widgets/register', 'elementrio_register_drop_caps_widget');
+add_action('elementor/widgets/register', 'elementrio_register_progress_bar_widget');
 
 // Include modules lists
 require_once(__DIR__ . '/config/module-lists.php');
