@@ -2,9 +2,9 @@
 Contributors: iqbal1hossain
 Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widgets, Elementor modules, addons
 Requires at least: 5.2
-Tested up to: 6.4
+Tested up to: 6.6
 Requires PHP: 7.2
-Stable tag: 1.1.1
+Stable tag: 1.1.3
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,12 @@ WordPress 4.9+ and Elementor 2.0+ required.
 
 
 == Changelog ==
+Elementrio Version 1.1.3
+Improved: Access control security
+
+Elementrio Version 1.1.2
+Added: Glass Morphism
+
 Elementrio Version 1.1.1
 Added: Dashboard
 Added: Widgets Category
