@@ -42,6 +42,42 @@ class Elementrio_Version {
     }
 }
 
+/**
+ * After activation hook method
+ * Add version to the options table if not exists yet and update the version if already exists.
+ *
+ * @return void
+ * @since 1.0.0
+ */
+function elementrio_activated_plugin() {
+	// Update version in the options table
+	update_option('elementrio_version', Elementrio_Version::get_plugin_version());
+
+	// Add installed time after checking if it exists or not
+	if (!get_option('elementrio_installed_time')) {
+		add_option('elementrio_installed_time', time());
+	}
+
+	// Redirect to the settings page after activation
+	add_option('elementrio_do_activation_redirect', true);
+}
+register_activation_hook(__FILE__, 'elementrio_activated_plugin');
+
+/**
+ * Redirect to the settings page after activation.
+ *
+ * @return void
+ * @since 1.0.0
+ */
+function elementrio_admin_redirect() {
+	if (get_option('elementrio_do_activation_redirect', false)) {
+		delete_option('elementrio_do_activation_redirect');
+		wp_safe_redirect(admin_url('admin.php?page=elementrio'));
+		exit;
+	}
+}
+add_action('admin_init', 'elementrio_admin_redirect');
+
 // Show admin notice if Elementor is not installed or activated
 function elementrio_fail_load() {
     $class = 'notice notice-error';
@@ -63,6 +99,16 @@ function elementrio_enqueue_script() {
     wp_enqueue_script('elementrio-js', ELEMENTRIO_PLUGIN_URL . 'assets/js/elementrio.js', array(), $elementrio_version, true);
 }
 add_action('elementor/frontend/after_register_scripts', 'elementrio_enqueue_script');
+
+// Fires before the initialization of the Elementrio plugin.
+function elementrio_plugins_loaded() {
+	/**
+	 * This action hook allows developers to perform additional tasks before the Elementrio plugin has been initialized.
+	 * @since 1.0.0
+	 */
+	do_action('elementrio/before_init');
+}
+add_action('plugins_loaded', 'elementrio_plugins_loaded');
 
 // Include category registration file
 require_once(__DIR__ . '/config/categories-registered.php');
