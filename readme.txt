@@ -1,10 +1,10 @@
 === Elementrio ===
 Contributors: iqbal1hossain
-Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widgets, Elementor modules, addons
+Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widgets
 Requires at least: 5.2
-Tested up to: 6.4
+Tested up to: 6.7
 Requires PHP: 7.2
-Stable tag: 1.1.1
+Stable tag: 1.1.4
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,10 @@ WordPress 4.9+ and Elementor 2.0+ required.
 
 
 == Changelog ==
+
+Elementrio Version 1.1.4
+Fixed: minor bug fixed
+
 Elementrio Version 1.1.1
 Added: Dashboard
 Added: Widgets Category
