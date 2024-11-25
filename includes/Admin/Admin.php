@@ -165,7 +165,7 @@ class Admin {
 	 * Admin enqueue scripts
 	 */
 	public function admin_enqueue_scripts() {
-		wp_enqueue_style( 'elementrio-admin', ELEMENTRIO_PLUGIN_URL . 'core/admin/css/admin-styles.css', [], ELEMENTRIO_PLUGIN_VERSION );
+		wp_enqueue_style( 'elementrio-admin', ELEMENTRIO_PLUGIN_URL . 'includes/Admin/assets/css/admin-styles.css', [], ELEMENTRIO_PLUGIN_VERSION );
 	}
 
 	/**
