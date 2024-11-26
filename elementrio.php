@@ -93,9 +93,9 @@ final class Elementrio {
 		add_action( 'init', array( $this, 'load_textdomain' ) );
 
 		/**
-		 * Fires while initialization of the GutenKit plugin.
+		 * Fires while initialization of the Elementrio plugin.
 		 *
-		 * This action hook allows developers to perform additional tasks while the GutenKit plugin has been initialized.
+		 * This action hook allows developers to perform additional tasks while the Elementrio plugin has been initialized.
 		 *
 		 * @since 1.0.0
 		 */
@@ -158,9 +158,9 @@ final class Elementrio {
 	 */
 	public function plugins_loaded() { 
 		/**
-		 * Fires before the initialization of the GutenKit plugin.
+		 * Fires before the initialization of the Elementrio plugin.
 		 *
-		 * This action hook allows developers to perform additional tasks before the GutenKit plugin has been initialized.
+		 * This action hook allows developers to perform additional tasks before the Elementrio plugin has been initialized.
 		 * @since 1.0.0
 		 */
 		do_action( 'elementrio/before_init' );
@@ -192,54 +192,49 @@ final class Elementrio {
 		//Elementrio\Hooks\Init::instance();
 
 		/**
-		 * Initializes the Gutenkit admin functionality.
+		 * Initializes the Elementrio admin functionality.
 		 *
-		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
 		 *
 		 * @since 1.0.0
 		 */
 		Elementrio\Admin\Admin::instance();
 
 		/**
-		 * Initializes the Gutenkit admin functionality.
+		 * Initializes the Elementrio CategoriesRegistered functionality.
 		 *
-		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
 		 *
 		 * @since 1.0.0
 		 */
 		Elementrio\Config\CategoriesRegistered::instance();
 
 		/**
-		 * Initializes the Gutenkit admin functionality.
+		 * Initializes the Elementrio Widgets functionality.
 		 *
-		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
 		 *
 		 * @since 1.0.0
 		 */
 		Elementrio\Widgets\Widgets::instance();
 
 		/**
-		 * Initializes the Gutenkit admin functionality.
+		 * Initializes the Elementrio Modules functionality.
 		 *
-		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
 		 *
 		 * @since 1.0.0
 		 */
 		Elementrio\Modules\Modules::instance();
 
 		/**
-		 * Initializes the Gutenkit admin functionality.
+		 * Initializes the Elementrio Enqueue functionality.
 		 *
-		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
 		 *
 		 * @since 1.0.0
 		 */
 		Elementrio\Core\Enqueue::instance();
 
 		/**
-		 * Fires after the initialization of the GutenKit plugin.
+		 * Fires after the initialization of the Elementrio plugin.
 		 *
-		 * This action hook allows developers to perform additional tasks after the GutenKit plugin has been initialized.
+		 * This action hook allows developers to perform additional tasks after the Elementrio plugin has been initialized.
 		 * @since 1.0.0
 		 */
 		do_action( 'elementrio/after_init' );
@@ -282,7 +277,7 @@ final class Elementrio {
 	}
 
 	/**
-	 * Loads the plugin text domain for the Gutenkit Blocks Addon.
+	 * Loads the plugin text domain for the Elementrio Blocks Addon.
 	 *
 	 * This function is responsible for loading the translation files for the plugin.
 	 * It sets the text domain to 'gutenkit-blocks-addon' and specifies the directory
