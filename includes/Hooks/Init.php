@@ -22,6 +22,6 @@ class Init {
 	 */
 	public function __construct() {
 		// Third Party Compatibility
-		//\Gutenkit\Hooks\ThirdPartyCompatibility::instance();
+		//\Elementrio\Hooks\ThirdPartyCompatibility::instance();
 	}
 }
