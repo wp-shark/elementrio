@@ -1,0 +1,22 @@
+.ele-element { 
+	.ele {
+		&-dropcap {
+			&-cotnent {
+				color: #000;
+				font-size: 30px;
+				line-height: 44px;
+
+				&:first-child::first-letter {
+					color: #fff;
+					font-size: 45px;
+					line-height: 1.2;
+					padding: 10px 20px;
+					margin-right: 10px;
+					background-color: #000;
+					border-radius: 10px;
+					border: 1px solid #3333;
+				}
+			}
+		}
+	}
+}

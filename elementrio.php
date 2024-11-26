@@ -200,6 +200,41 @@ final class Elementrio {
 		 */
 		Elementrio\Admin\Admin::instance();
 
+		/**
+		 * Initializes the Gutenkit admin functionality.
+		 *
+		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Config\CategoriesRegistered::instance();
+
+		/**
+		 * Initializes the Gutenkit admin functionality.
+		 *
+		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Widgets\Widgets::instance();
+
+		/**
+		 * Initializes the Gutenkit admin functionality.
+		 *
+		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Modules\Modules::instance();
+
+		/**
+		 * Initializes the Gutenkit admin functionality.
+		 *
+		 * This function creates an instance of the Gutenkit\Admin\Admin class and initializes the admin functionality for the Gutenkit plugin.
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Core\Enqueue::instance();
 
 		/**
 		 * Fires after the initialization of the GutenKit plugin.
