@@ -1,6 +1,6 @@
 <?php
 /*
-* Plugin Name: Elementrio
+* Plugin Name: Elementrio - Ultimate Addons for Elementor, Elementor Kit
 * Description: An Elementor addon plugin for Elementor widgets.
 * Version: 1.2.0
 * Requires at least: 5.2

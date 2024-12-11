@@ -1,4 +1,4 @@
-=== Elementrio ===
+=== Elementrio - Ultimate Addons for Elementor, Elementor Kit ===
 Contributors: iqbal1hossain
 Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widgets
 Requires at least: 5.2
