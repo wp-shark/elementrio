@@ -10,8 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-Elementor Addons come with Header Footer Builder, Mega Menu Builder, Free Elementor Widgets, Templates Library Pricing table, Team member, testimonial Widgets, Etc under the hood. It has 85+ custom widgets to create any site with on the fly.
-
+Elementrio Elementor addons is a powerful addon for the Elementor Page Builder, designed to enhance your website creation process.
 
 == Description ==
 
