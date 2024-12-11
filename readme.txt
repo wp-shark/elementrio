@@ -68,6 +68,9 @@ WordPress 4.9+ and Elementor 2.0+ required.
 
 == Changelog ==
 
+Elementrio Version 1.2.0
+Fixed: minor bug fixed
+
 Elementrio Version 1.1.4
 Fixed: minor bug fixed
 
