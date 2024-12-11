@@ -1,8 +1,8 @@
 <?php
 /*
-* Plugin Name: Elementrio
+* Plugin Name: Elementrio - Ultimate Addons for Elementor, Elementor Kit
 * Description: An Elementor addon plugin for Elementor widgets.
-* Version: 1.1.4
+* Version: 1.2.0
 * Requires at least: 5.2
 * Requires PHP: 7.2
 * Author: Iqbal Hossain
@@ -16,112 +16,333 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Defining plugin constants.
+ * Final class for the \Elementrio plugin.
  *
- * @since 1.0.0
+ * @since 1.1.4
  */
-define('ELEMENTRIO_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('ELEMENTRIO_PLUGIN_DIR', plugin_dir_path(__FILE__));
-
-// Make sure the Elementor plugin is active
-if (!did_action('elementor/loaded')) {
-    add_action('admin_notices', 'elementrio_fail_load');
-    return;
-}
-
-/**
- * Defining plugin version
- *
- * @since 1.0.0
- */
-class Elementrio_Version {
-    const PLUGIN_VERSION = '1.1.4';
-
-    public static function get_plugin_version() {
-        return self::PLUGIN_VERSION;
-    }
-}
-
-/**
- * After activation hook method
- * Add version to the options table if not exists yet and update the version if already exists.
- *
- * @return void
- * @since 1.0.0
- */
-function elementrio_activated_plugin() {
-	// Update version in the options table
-	update_option('elementrio_version', Elementrio_Version::get_plugin_version());
-
-	// Add installed time after checking if it exists or not
-	if (!get_option('elementrio_installed_time')) {
-		add_option('elementrio_installed_time', time());
-	}
-
-	// Redirect to the settings page after activation
-	add_option('elementrio_do_activation_redirect', true);
-}
-register_activation_hook(__FILE__, 'elementrio_activated_plugin');
-
-/**
- * Redirect to the settings page after activation.
- *
- * @return void
- * @since 1.0.0
- */
-function elementrio_admin_redirect() {
-	if (get_option('elementrio_do_activation_redirect', false)) {
-		delete_option('elementrio_do_activation_redirect');
-		wp_safe_redirect(admin_url('admin.php?page=elementrio'));
-		exit;
-	}
-}
-add_action('admin_init', 'elementrio_admin_redirect');
-
-// Show admin notice if Elementor is not installed or activated
-function elementrio_fail_load() {
-    $class = 'notice notice-error';
-    $message = __('Elementrio requires Elementor to be active.', 'elementrio');
-
-    printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
-}
-
-// Enqueue Elementrio plugin's custom CSS
-function elementrio_enqueue_styles() {
-    $elementrio_version = Elementrio_Version::get_plugin_version();
-    wp_enqueue_style('elementrio-styles', ELEMENTRIO_PLUGIN_URL . 'assets/css/elementrio.css', array(), $elementrio_version);
-}
-add_action('elementor/frontend/after_enqueue_styles', 'elementrio_enqueue_styles');
-
-// Enqueue Elementrio plugin's custom js
-function elementrio_enqueue_script() {
-    $elementrio_version = Elementrio_Version::get_plugin_version();
-    wp_enqueue_script('elementrio-js', ELEMENTRIO_PLUGIN_URL . 'assets/js/elementrio.js', array(), $elementrio_version, true);
-}
-add_action('elementor/frontend/after_register_scripts', 'elementrio_enqueue_script');
-
-// Fires before the initialization of the Elementrio plugin.
-function elementrio_plugins_loaded() {
+final class Elementrio {
 	/**
-	 * This action hook allows developers to perform additional tasks before the Elementrio plugin has been initialized.
+	 * Plugin version
+	 *
+	 * @var string
+	 */
+	const VERSION = '1.2.0';
+
+	/**
+	 * Minimum Elementor version
+	 *
+	 * @var string
+	 */
+	const MINIMUM_ELEMENTOR_VERSION = '2.0.0';
+
+	/**
+	 * Minimum PHP version
+	 *
+	 * @var string
+	 */
+	const MINIMUM_PHP_VERSION = '7.0';
+
+	/**
+	 * Instance
+	 *
+	 * @access private
+	 * @static
+	 *
+	 * @var Elementrio
+	 */
+	private static $_instance = null;
+
+	/**
+	 * Instance
+	 *
+	 * Ensures only one instance of Elementrio is loaded or can be loaded.
+	 *
+	 * @access public
+	 * @static
+	 *
+	 * @return Elementrio - Main instance.
+	 */
+	public static function instance() {
+		if (is_null(self::$_instance)) {
+			self::$_instance = new self();
+		}
+
+		return self::$_instance;
+	}
+
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		// Plugins helper constants
+		$this->helper_constants();
+
+		// Load after plugin activation
+		register_activation_hook( __FILE__, array( $this, 'activated_plugin' ) );
+
+		// Redirect to the settings page after activation
+		add_action( 'admin_init', array( $this, 'admin_redirect' ) );
+
+		// Make sure ADD AUTOLOAD is vendor/autoload.php file
+		require_once ELEMENTRIO_PLUGIN_DIR . 'vendor/autoload.php';
+
+		// Plugin actions
+		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
+
+		// Hook into 'plugin_action_links' filter
+		add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), [ $this, 'plugin_action_links' ] );
+
+		// Add custom row meta for plugin description.
+		add_filter( 'plugin_row_meta', [ $this, 'elementrio_plugin_row_meta' ], 10, 2 );
+
+		// Load the plugin text domain
+		add_action( 'init', array( $this, 'load_textdomain' ) );
+
+		/**
+		 * Fires while initialization of the Elementrio plugin.
+		 *
+		 * This action hook allows developers to perform additional tasks while the Elementrio plugin has been initialized.
+		 *
+		 * @since 1.0.0
+		 */
+		do_action( 'elementrio/init' );
+	}
+
+	/**
+	 * Helper method for plugin constants.
+	 *
+	 * @return void
 	 * @since 1.0.0
 	 */
-	do_action('elementrio/before_init');
+	public function helper_constants() {
+		define( 'ELEMENTRIO_PLUGIN_VERSION', self::VERSION );
+		define( 'ELEMENTRIO_PLUGIN_NAME', 'Elementrio' );
+		define( 'ELEMENTRIO_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
+		define( 'ELEMENTRIO_PLUGIN_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+	}
+
+	/**
+	 * After activation hook method
+	 * add version to the options table if not exists yet and update the version if already exists.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function activated_plugin() {
+		// update vertion to the options table
+		update_option( 'elementrio_version', ELEMENTRIO_PLUGIN_VERSION );
+
+		// added installed time after checking time exist or not
+		if ( ! get_option( 'elementrio_installed_time' ) ) {
+			add_option( 'elementrio_installed_time', time() );
+		}
+
+		// redirect to the settings page after activation
+		add_option('elementrio_do_activation_redirect', true);
+	}
+
+	/**
+	 * Redirect to the settings page after activation.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function admin_redirect() {
+		if ( get_option('elementrio_do_activation_redirect', false) ) {
+			delete_option('elementrio_do_activation_redirect');
+			wp_safe_redirect( admin_url( 'admin.php?page=elementrio&activation-redirect=1' ) );
+			exit;
+		}
+	}
+
+	/**
+	 * Plugins loaded method.
+	 * loads our others classes and textdomain.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function plugins_loaded() { 
+		/**
+		 * Fires before the initialization of the Elementrio plugin.
+		 *
+		 * This action hook allows developers to perform additional tasks before the Elementrio plugin has been initialized.
+		 * @since 1.0.0
+		 */
+		do_action( 'elementrio/before_init' );
+
+		// Check if Elementor installed and activated
+		if (!did_action('elementor/loaded')) {
+			add_action('admin_notices', [$this, 'elementrio_fail_load']);
+			return;
+		}
+
+		// Check for required Elementor version
+		if (!version_compare(ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=')) {
+			add_action('admin_notices', [$this, 'elementrio_fail_load_elementor']);
+			return;
+		}
+
+		// Check for required PHP version
+		if (version_compare(PHP_VERSION, self::MINIMUM_PHP_VERSION, '<')) {
+			add_action('admin_notices', [$this, 'elementrio_fail_load_php']);
+			return;
+		}
+
+		/**
+		 * Action & Filter hooks.
+		 *
+		 * @return void
+		 * @since 1.2.9
+		 */
+		//Elementrio\Hooks\Init::instance();
+
+		/**
+		 * Initializes the Elementrio admin functionality.
+		 *
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Admin\Admin::instance();
+
+		/**
+		 * Initializes the Elementrio CategoriesRegistered functionality.
+		 *
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Config\CategoriesRegistered::instance();
+
+		/**
+		 * Initializes the Elementrio Widgets functionality.
+		 *
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Widgets\Widgets::instance();
+
+		/**
+		 * Initializes the Elementrio Modules functionality.
+		 *
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Modules\Modules::instance();
+
+		/**
+		 * Initializes the Elementrio Enqueue functionality.
+		 *
+		 *
+		 * @since 1.0.0
+		 */
+		Elementrio\Core\Enqueue::instance();
+
+		/**
+		 * Fires after the initialization of the Elementrio plugin.
+		 *
+		 * This action hook allows developers to perform additional tasks after the Elementrio plugin has been initialized.
+		 * @since 1.0.0
+		 */
+		do_action( 'elementrio/after_init' );
+	}
+
+	/**
+	 * elementor not loaded notice
+	 */
+	public function elementrio_fail_load() {
+		$class = 'notice notice-error';
+		$message = __('Elementrio requires Elementor to be active.', 'elementrio');
+
+		printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
+	}
+
+	/**
+	 * Check for required Elementor version
+	 */
+	public function elementrio_fail_load_elementor() {
+		$class = 'notice notice-error';
+		$message =  sprintF(
+			__('Elementrio requires required Elementor version to be active. Please update Elementor.', 'elementrio'),
+			self::MINIMUM_ELEMENTOR_VERSION
+		);
+
+		printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
+	}
+
+	/**
+	 * Check for required PHP version
+	 */
+	public function elementrio_fail_load_php() { 
+		$class = 'notice notice-error';
+		$message = sprintf(
+			__('Elementrio requires PHP %s version to be active. Please update PHP version.', 'elementrio'),
+			self::MINIMUM_PHP_VERSION
+		);
+
+		printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
+	}
+
+	/**
+	 * Adds action links to the plugin list table.
+	 *
+	 * This adds a "Settings" plugin's action links on the Plugins page.
+	 *
+	 * @since 2.0.2
+	*/
+	public function plugin_action_links( $links ) {
+		$settings_link = sprintf(
+			'<a href="%1$s">%2$s</a>',
+			admin_url( 'admin.php?page=elementrio' ),
+			esc_html__( 'Settings', 'elementrio' )
+		);
+
+		array_unshift( $links, $settings_link );
+	
+		return $links;
+	}
+
+	/**
+	 * Add custom row meta to the plugin description in the Plugins page.
+	 *
+	 * @param array  $plugin_meta Meta information about the plugin.
+	 * @param string $plugin_file Plugin file path.
+	 * @return array Modified plugin meta.
+	 */
+	public function elementrio_plugin_row_meta( $plugin_meta, $plugin_file ) {
+		if ( plugin_basename( __FILE__ ) === $plugin_file ) {
+			$row_meta = [
+				'video' => '<a href="https://youtu.be/dYPl8_0VXCk?si=MaGrLTjgoLcjcg4I" aria-label="' . esc_attr__( 'View Video Tutorials', 'elementrio' ) . '" target="_blank">' . esc_html__( 'Video Tutorials', 'elementrio' ) . '</a>',
+			];
+
+			// Merge the custom meta with existing plugin meta.
+			$plugin_meta = array_merge( $plugin_meta, $row_meta );
+		}
+
+		return $plugin_meta;
+	}
+
+	/**
+	 * Loads the plugin text domain for the Elementrio Blocks Addon.
+	 *
+	 * This function is responsible for loading the translation files for the plugin.
+	 * It sets the text domain to 'gutenkit-blocks-addon' and specifies the directory
+	 * where the translation files are located.
+	 *
+	 * @param string $domain   The text domain for the plugin.
+	 * @param bool   $network  Whether the plugin is network activated.
+	 * @param string $directory The directory where the translation files are located.
+	 * @return bool True on success, false on failure.
+	 * @since 2.1.5
+	 */
+	public function load_textdomain() {
+		load_plugin_textdomain( 'elementrio', false, ELEMENTRIO_PLUGIN_DIR . 'languages/' );
+	}
 }
-add_action('plugins_loaded', 'elementrio_plugins_loaded');
 
-// Include category registration file
-require_once(__DIR__ . '/config/categories-registered.php');
-
-// Include widget registration file and register widgets
-require_once(__DIR__ . '/config/widget-lists.php');
-add_action('elementor/widgets/register', 'elementrio_register_blog_post_widget');
-add_action('elementor/widgets/register', 'elementrio_register_icon_box_widget');
-add_action('elementor/widgets/register', 'elementrio_register_drop_caps_widget');
-
-// Include modules lists
-require_once(__DIR__ . '/config/module-lists.php');
-
-// Include admin files
-require_once(__DIR__ . '/core/admin/admin.php');
-require_once(__DIR__ . '/core/admin/menu.php');
+/**
+ * Kickoff the plugin
+ *
+ * @since 1.0.0
+ *
+ */
+new Elementrio();

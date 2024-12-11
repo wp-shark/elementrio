@@ -1,17 +1,16 @@
-=== Elementrio ===
+=== Elementrio - Ultimate Addons for Elementor, Elementor Kit ===
 Contributors: iqbal1hossain
 Tags: Elementor widgets, widgets for Elementor, elementor addon, elements, widgets
 Requires at least: 5.2
 Tested up to: 6.7
 Requires PHP: 7.2
-Stable tag: 1.1.4
+Stable tag: 1.2.0
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-Elementor Addons come with Header Footer Builder, Mega Menu Builder, Free Elementor Widgets, Templates Library Pricing table, Team member, testimonial Widgets, Etc under the hood. It has 85+ custom widgets to create any site with on the fly.
-
+Elementrio Elementor addons is a powerful addon for the Elementor Page Builder, designed to enhance your website creation process.
 
 == Description ==
 

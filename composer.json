@@ -1,0 +1,15 @@
+{
+	"name": "elementrio/elementrio",
+	"description": "An Elementor addon plugin for Elementor widgets.",
+	"authors": [
+		{
+			"name": "iqbalhossain",
+			"email": "iqbalgazi2021@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Elementrio\\": "includes/"
+		}
+	}
+}

@@ -1,0 +1,390 @@
+# Copyright (C) 2024 Iqbal Hossain
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Elementrio 1.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/elementrio\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-12-11T16:51:33+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: elementrio\n"
+
+#: elementrio.php:254
+msgid "Elementrio requires Elementor to be active."
+msgstr ""
+
+#: elementrio.php:265
+msgid "Elementrio requires required Elementor version to be active. Please update Elementor."
+msgstr ""
+
+#: elementrio.php:278
+msgid "Elementrio requires PHP %s version to be active. Please update PHP version."
+msgstr ""
+
+#: elementrio.php:296
+msgid "Settings"
+msgstr ""
+
+#: elementrio.php:314
+msgid "View Video Tutorials"
+msgstr ""
+
+#: elementrio.php:314
+msgid "Video Tutorials"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:21
+msgid "Elementrio Glass Morphism"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:29
+msgid "Glass Morphism"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:40
+msgid "Blur"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:64
+msgid "Brightness"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:88
+msgid "Contrast"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:112
+msgid "Saturation"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:136
+msgid "Grayscale"
+msgstr ""
+
+#: includes/Modules/glass-morphism/glass-morphism.php:160
+msgid "Hue"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:11
+msgid "Ele Blog Post"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:33
+msgid "Layout"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:40
+msgid "Posts Count"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:51
+msgid "Show Posts Per Row"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:54
+msgid "1"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:55
+msgid "2"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:56
+msgid "3"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:57
+msgid "4"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:58
+msgid "6"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:67
+msgid "Show Featured Image"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:69
+#: includes/Widgets/blog-posts/blog-posts.php:80
+#: includes/Widgets/blog-posts/blog-posts.php:91
+#: includes/Widgets/blog-posts/blog-posts.php:102
+msgid "Yes"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:70
+#: includes/Widgets/blog-posts/blog-posts.php:81
+#: includes/Widgets/blog-posts/blog-posts.php:92
+#: includes/Widgets/blog-posts/blog-posts.php:103
+msgid "No"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:78
+msgid "Show Title"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:89
+msgid "Show Content"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:100
+msgid "Show More Button"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:115
+msgid "Read More Button"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:122
+msgid "Label"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:127
+#: includes/Widgets/blog-posts/blog-posts.php:128
+msgid "Learn more "
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:139
+msgid "Wrapper"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:151
+#: includes/Widgets/blog-posts/blog-posts.php:485
+#: includes/Widgets/blog-posts/blog-posts.php:635
+#: includes/Widgets/icon-box/icon-box.php:232
+#: includes/Widgets/icon-box/icon-box.php:631
+msgid "Normal"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:185
+#: includes/Widgets/blog-posts/blog-posts.php:525
+#: includes/Widgets/blog-posts/blog-posts.php:672
+#: includes/Widgets/icon-box/icon-box.php:278
+#: includes/Widgets/icon-box/icon-box.php:676
+msgid "Hover"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:220
+#: includes/Widgets/blog-posts/blog-posts.php:316
+#: includes/Widgets/blog-posts/blog-posts.php:566
+#: includes/Widgets/blog-posts/blog-posts.php:710
+#: includes/Widgets/drop-cap/drop-cap.php:155
+#: includes/Widgets/icon-box/icon-box.php:327
+#: includes/Widgets/icon-box/icon-box.php:441
+#: includes/Widgets/icon-box/icon-box.php:724
+msgid "Border Radius"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:233
+#: includes/Widgets/blog-posts/blog-posts.php:581
+#: includes/Widgets/blog-posts/blog-posts.php:723
+#: includes/Widgets/drop-cap/drop-cap.php:121
+#: includes/Widgets/icon-box/icon-box.php:340
+#: includes/Widgets/icon-box/icon-box.php:737
+msgid "Padding"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:245
+#: includes/Widgets/blog-posts/blog-posts.php:328
+#: includes/Widgets/blog-posts/blog-posts.php:384
+#: includes/Widgets/blog-posts/blog-posts.php:427
+#: includes/Widgets/blog-posts/blog-posts.php:596
+#: includes/Widgets/blog-posts/blog-posts.php:735
+#: includes/Widgets/drop-cap/drop-cap.php:134
+#: includes/Widgets/icon-box/icon-box.php:352
+#: includes/Widgets/icon-box/icon-box.php:454
+#: includes/Widgets/icon-box/icon-box.php:516
+#: includes/Widgets/icon-box/icon-box.php:567
+#: includes/Widgets/icon-box/icon-box.php:749
+msgid "Margin"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:262
+msgid "Thumb"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:270
+#: includes/Widgets/icon-box/icon-box.php:379
+msgid "Width"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:289
+#: includes/Widgets/icon-box/icon-box.php:406
+msgid "Height"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:344
+#: includes/Widgets/icon-box/icon-box.php:118
+#: includes/Widgets/icon-box/icon-box.php:478
+msgid "Title"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:360
+#: includes/Widgets/blog-posts/blog-posts.php:416
+#: includes/Widgets/blog-posts/blog-posts.php:492
+#: includes/Widgets/blog-posts/blog-posts.php:532
+#: includes/Widgets/blog-posts/blog-posts.php:642
+#: includes/Widgets/blog-posts/blog-posts.php:679
+#: includes/Widgets/drop-cap/drop-cap.php:60
+#: includes/Widgets/drop-cap/drop-cap.php:91
+#: includes/Widgets/icon-box/icon-box.php:239
+#: includes/Widgets/icon-box/icon-box.php:285
+#: includes/Widgets/icon-box/icon-box.php:494
+#: includes/Widgets/icon-box/icon-box.php:545
+#: includes/Widgets/icon-box/icon-box.php:638
+#: includes/Widgets/icon-box/icon-box.php:683
+msgid "Color"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:372
+#: includes/Widgets/icon-box/icon-box.php:505
+#: includes/Widgets/icon-box/icon-box.php:556
+msgid "Hover Color"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:400
+#: includes/Widgets/icon-box/icon-box.php:132
+#: includes/Widgets/icon-box/icon-box.php:528
+msgid "Description"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:443
+msgid "Meta"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:459
+msgid "Icon Size"
+msgstr ""
+
+#: includes/Widgets/blog-posts/blog-posts.php:615
+#: includes/Widgets/icon-box/icon-box.php:150
+#: includes/Widgets/icon-box/icon-box.php:610
+msgid "Button"
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:11
+msgid "Ele Drop Caps"
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:32
+msgid "Dropcaps"
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:39
+#: includes/Widgets/drop-cap/drop-cap.php:52
+#: includes/Widgets/icon-box/icon-box.php:111
+#: includes/Widgets/icon-box/icon-box.php:470
+msgid "Content"
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:41
+msgid "Lorem this delightful rhyming tale, a human boy engages in wintry fun with a gaggle of kids made of snow. But as they scamper through the woods and get into all manner of trouble"
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:42
+msgid "Enter Your Drop Caps Content."
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:83
+msgid "Dropcap Latter"
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:112
+msgid "Background"
+msgstr ""
+
+#: includes/Widgets/drop-cap/drop-cap.php:147
+msgid "Border"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:21
+msgid "Ele Icon Box"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:43
+msgid "Icon Box"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:49
+msgid "Icon Type"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:54
+msgid "None"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:58
+#: includes/Widgets/icon-box/icon-box.php:188
+msgid "Icon"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:62
+#: includes/Widgets/icon-box/icon-box.php:368
+msgid "Image"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:73
+msgid "Header Icon"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:89
+msgid "Choose Image"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:123
+msgid "This is the Elementrio"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:124
+#: includes/Widgets/icon-box/icon-box.php:163
+msgid "Enter your title"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:137
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:138
+msgid "Enter your description"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:157
+msgid "Button Text"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:162
+msgid "Read More"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:171
+msgid "Link"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:176
+msgid "https://your-link.com"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:199
+msgid "Size"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:579
+msgid "Alignment"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:585
+msgid "Left"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:589
+msgid "Center"
+msgstr ""
+
+#: includes/Widgets/icon-box/icon-box.php:593
+msgid "Right"
+msgstr ""
