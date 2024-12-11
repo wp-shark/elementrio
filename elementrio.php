@@ -89,6 +89,12 @@ final class Elementrio {
 		// Plugin actions
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
 
+		// Hook into 'plugin_action_links' filter
+		add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), [ $this, 'plugin_action_links' ] );
+
+		// Add custom row meta for plugin description.
+		add_filter( 'plugin_row_meta', [ $this, 'elementrio_plugin_row_meta' ], 10, 2 );
+
 		// Load the plugin text domain
 		add_action( 'init', array( $this, 'load_textdomain' ) );
 
@@ -274,6 +280,45 @@ final class Elementrio {
 		);
 
 		printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
+	}
+
+	/**
+	 * Adds action links to the plugin list table.
+	 *
+	 * This adds a "Settings" plugin's action links on the Plugins page.
+	 *
+	 * @since 2.0.2
+	*/
+	public function plugin_action_links( $links ) {
+		$settings_link = sprintf(
+			'<a href="%1$s">%2$s</a>',
+			admin_url( 'admin.php?page=elementrio' ),
+			esc_html__( 'Settings', 'elementrio' )
+		);
+
+		array_unshift( $links, $settings_link );
+	
+		return $links;
+	}
+
+	/**
+	 * Add custom row meta to the plugin description in the Plugins page.
+	 *
+	 * @param array  $plugin_meta Meta information about the plugin.
+	 * @param string $plugin_file Plugin file path.
+	 * @return array Modified plugin meta.
+	 */
+	public function elementrio_plugin_row_meta( $plugin_meta, $plugin_file ) {
+		if ( plugin_basename( __FILE__ ) === $plugin_file ) {
+			$row_meta = [
+				'video' => '<a href="https://youtu.be/dYPl8_0VXCk?si=MaGrLTjgoLcjcg4I" aria-label="' . esc_attr__( 'View Video Tutorials', 'elementrio' ) . '" target="_blank">' . esc_html__( 'Video Tutorials', 'elementrio' ) . '</a>',
+			];
+
+			// Merge the custom meta with existing plugin meta.
+			$plugin_meta = array_merge( $plugin_meta, $row_meta );
+		}
+
+		return $plugin_meta;
 	}
 
 	/**
